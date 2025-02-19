@@ -67,13 +67,6 @@ class HotelServiceTest {
         assertEquals("No se encontró el elemento con ID 99. No se pudo eliminar.", resultado);
     }
 
-//    @Test
-//    void actualizarHotelNoEncontrado() {
-//        HotelDTO hotelDTO = crearHotelDTO();
-//        String resultado = hotelService.actualizar(99, hotelDTO);
-//        assertEquals("No se encontró el elemento con ID 99. No se pudo actualizar.", resultado);
-//    }
-
     @Test
     void buscarHotelPorId() {
         Hotel hotel = crearHotel();

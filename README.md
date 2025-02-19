@@ -4,9 +4,9 @@ Prueba técnica de HACK A BOSS con Spring Boot
 
 
 
-# Agencia de Turismo - API REST
+# Nueva Agencia - API REST
 
-Este proyecto es una API REST desarrollada para una agencia de turismo que permite gestionar la búsqueda y reserva de hoteles y vuelos. La API está construida utilizando Spring Boot, Java, y sigue las mejores prácticas de desarrollo, incluyendo el uso de Spring Security, JWT, JPA, Hibernate, y Swagger para la documentación de los endpoints.
+Esta API REST está enfocada para una agencia de viajes que permite gestionar la búsqueda y reserva de hoteles y vuelos. Se ha usado Spring Boot, Java, y sigue las mejores prácticas de desarrollo, incluyendo el uso de Spring Security, JPA, Hibernate, y Swagger para la documentación de los endpoints.
 
 ## Requisitos Técnicos
 
@@ -20,54 +20,51 @@ Este proyecto es una API REST desarrollada para una agencia de turismo que permi
 
 # Estructura del Repositorio #
 
-`/agencia-de-turismo
-│── /src
-│── /sql
-│    ├── agencia_de_turismo.sql (Base de datos)
-│    ├── datos agencia de viajes.sql (Script de carga de datos)
-│── /Postman
-│    ├── AgenciaDeTurismo.postman_collection.json (Colección de endpoints)
-│── README.md
-│── pom.xml`
+![image](https://github.com/user-attachments/assets/c6e6ad20-9f85-484f-94ce-8d6b2900accc)
+
+
+
 
 ## Estructura del Proyecto
 
 El proyecto está organizado en las siguientes capas:
 
-- **Controladores**: Manejan las solicitudes HTTP y devuelven las respuestas correspondientes.
+- **Controladores**: Gestión de las solicitudes HTTP y devuelven las respuestas.
 - **Servicios**: Contienen la lógica de negocio y se comunican con los repositorios.
 - **Repositorios**: Interactúan con la base de datos para realizar operaciones CRUD.
-- **Modelos**: Representan las entidades de la base de datos.
-- **DTOs**: Objetos de transferencia de datos utilizados para enviar y recibir información entre el cliente y el servidor.
+- **Modelos**: Son las representaciones de las entidades de la base de datos..
+- **DTOs**: Objetos de transferencia de datos usados para enviar y recibir información entre el cliente y el servidor.
+- 
 
 ## Configuración del Proyecto
 
 ### Base de Datos
 
-Puedes usar la base de datos proporcionada en la carpeta `sql`:
+Dentro de la carpeta `resources` se encuentra el archivo SQL lista para importar:
 
-- Importa agencia_de_turismo.sql en tu gestor de base de datos.
 
-- O ejecuta el script datos agencia de viajes.sql para cargar los datos en otra base.
+- En caso de que no se haya exportado bien, puede crearla manualmente con `CREATE DATABASE nagencia;` .
 
-- **Es necesario alguno de estos pasos para la correcta utilización de los test unitarios.**
+
 
 ### Postman
 
-Encontrarás un archivo llamado `postman/AgenciaDeTurismo.postman_collection.json`. Este archivo contiene una colección de Postman con todos los endpoints de la API, junto con ejemplos de solicitudes y respuestas.
+En la misma carpeta de `resources`. Se dispone de una colección de peticiones HTTP listo para usar con Postman con ejemplos.
 
 ### Configuración de la Aplicación
 
-El archivo `application.properties` contiene la configuración necesaria para conectar la aplicación con la base de datos MySQL. Asegúrate de ajustar las credenciales y la URL de la base de datos según tu entorno.
+En el archivo `application.properties` está la configuración necesaria para conectar la aplicación con la base de datos. Asegúrate de que tenga estas credenciales.
 ```
-properties
-spring.datasource.url=jdbc:mysql://localhost:3306/agencia_de_turismo?useSSL=false&serverTimezone=UTC
+# Base de datos
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/nagencia?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
-spring.jpa.hibernate.ddl-auto=update
 ```
 # Ejecución del Proyecto
+
+Para descargar el proyecto, se recomienda usar Git para clonar
 ```
 1. git clone https://github.com/rosmander/BlancoPerez_pruebatec4.git
 cd agencia-de-turismo

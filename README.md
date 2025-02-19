@@ -8,7 +8,7 @@ Prueba técnica de HACK A BOSS con Spring Boot
 
 # Nueva Agencia - API REST
 
-Esta API REST está enfocada para una agencia de viajes que permite gestionar la búsqueda y reserva de hoteles y vuelos. Se ha usado Spring Boot, Java, y sigue las mejores prácticas de desarrollo, incluyendo el uso de Spring Security, JPA, Hibernate, y Swagger para la documentación de los endpoints.
+La API REST de Nueva Agencia está diseñada para una agencia de viajes que permite gestionar la búsqueda y reserva de hoteles y vuelos. Esta API ha sido desarrollada utilizando Spring Boot, Java y sigue las mejores prácticas de desarrollo, incluyendo el uso de Spring Security, JPA, Hibernate, y Swagger para la documentación de los endpoints.
 
 ## Requisitos Técnicos
 
@@ -22,9 +22,13 @@ Esta API REST está enfocada para una agencia de viajes que permite gestionar la
 
 # Estructura del Repositorio #
 
+El repositorio está organizado en las siguientes carpetas:
+
+- src/main/java: Código fuente de la aplicación.
+- src/main/resources: Archivos de configuración y recursos.
+- src/test/java: Pruebas unitarias y de integración
+
 ![image](https://github.com/user-attachments/assets/c6e6ad20-9f85-484f-94ce-8d6b2900accc)
-
-
 
 
 ## Estructura del Proyecto
@@ -68,7 +72,7 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 
 Para descargar el proyecto, se recomienda usar Git para clonar
 ```
-1. git clone https://github.com/rosmander/BlancoPerez_pruebatec4.git](https://github.com/StevenCubillos22/CubillosSteven_pruebatec4.git ANueva
+1. git clone https://github.com/StevenCubillos22/CubillosSteven_pruebatec4.git ANueva
 cd ANueva
 ```
 2. Ejecuta la aplicación utilizando Maven:
@@ -133,11 +137,11 @@ Puedes hacer uso de la colección de Postman ubicada en la carpeta Postman para 
 
 # Seguridad y Autenticación
 
--Es importante definir las credenciales para aquellos endpoints que lo usan en application.properties:
+-Algunos de los endpoints requieren autenticación. Asegúrate de haber configurado las credenciales adecuadas en application.properties:
 
 ![image](https://github.com/user-attachments/assets/b44b9cd6-82a1-4648-b67b-2107b45cae57)
 
-Y luego en Postman ingresar sus credenciales:
+En Postman, puedes ingresar tus credenciales en la pestaña "Authorization" para probar los endpoints protegidos:
 
 ![image](https://github.com/user-attachments/assets/aa9ca893-ad2c-484e-9ab8-a996de4f95ef)
 

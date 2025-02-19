@@ -1,6 +1,8 @@
 # CubillosSteven_pruebatec4
 Prueba técnica de HACK A BOSS con Spring Boot
 
+![creación de un proyecto en laravel](https://github.com/user-attachments/assets/31296e83-fa4b-4111-b879-eceb6d8f1e93)
+
 
 
 
@@ -53,7 +55,7 @@ En la misma carpeta de `resources`. Se dispone de una colección de peticiones H
 
 ### Configuración de la Aplicación
 
-En el archivo `application.properties` está la configuración necesaria para conectar la aplicación con la base de datos. Asegúrate de que tenga estas credenciales.
+En el archivo `application.properties` está la configuración necesaria para conectar la aplicación con la base de datos. Asegúrate de ajustar las credenciales, asi como el usuario y contraseña de su BBDD.
 ```
 # Base de datos
 spring.jpa.hibernate.ddl-auto=update
@@ -66,73 +68,77 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 
 Para descargar el proyecto, se recomienda usar Git para clonar
 ```
-1. git clone https://github.com/rosmander/BlancoPerez_pruebatec4.git
-cd agencia-de-turismo
+1. git clone https://github.com/rosmander/BlancoPerez_pruebatec4.git](https://github.com/StevenCubillos22/CubillosSteven_pruebatec4.git ANueva
+cd ANueva
 ```
-2. Asegúrate de tener MySQL instalado y en ejecución.
-
-4. Configura las credenciales de la base de datos en el archivo `application.properties.`
-
-5. Ejecuta la aplicación utilizando Maven:
+2. Ejecuta la aplicación utilizando Maven:
 
 ```
 mvn clean install
 mvn spring-boot:run
 
 ```
-6. Accede a la documentación de la API en Swagger UI: `http://localhost:8080/doc/swagger-ui.html.`
+6. Accede a la documentación de la API con el uso de Swagger UI: `http://localhost:8080/doc/swagger-ui.html.`
 
 
 # Endpoints
 
 ## Hoteles
 
-- GET /agency/hotels: Obtiene un listado de todos los hoteles registrados.
+- GET /hoteles: Obtiene un listado de todos los hoteles registrados.
 
-- GET /agency/rooms: Obtiene un listado de habitaciones disponibles en un rango de fechas y destino específico.
+- GET /hoteles/disponibles: Obtiene un listado de habitaciones de hoteles disponibles según las fechas y destino que le pase como parametro.
 
-- POST /agency/room-booking/new: Realiza una reserva de habitación.
+- POST /hoteles/nuevo: Realiza una reserva de habitación.
 
-- POST /agency/hotels/new: Crea un nuevo hotel (requiere autenticación).
+- DELETE /hoteles/borrar/{id}: Realiza una reserva de habitación.
 
-- PUT /agency/hotels/edit/{id}: Actualiza un hotel existente (requiere autenticación).
+- PUT /hoteles/actualizar/{id}: Crea un nuevo hotel (requiere autenticación).
 
-- DELETE /agency/hotels/delete/{id}: Elimina un hotel (requiere autenticación).
+- DELETE /reserva-hotel/borrar/{id}: Elimina un hotel (requiere autenticación).
+
+- GET /reserva-hotel: Elimina un hotel (requiere autenticación).
+
+- POST /reserva-hotel/crear: Elimina la reserva de hotel (requiere autenticación).
+  
 
 ## Vuelos
 
--  GET /agency/flights: Obtiene un listado de todos los vuelos registrados.
+-  PUT /vuelos/actualizar/{id}: Actualiza un vuelo existente (requiere autenticación).
 
--  GET /agency/flights?dateFrom=dd/mm/aaaa&dateTo=dd/mm/aaaa&origin=ciudad1&destination=ciudad2: Obtiene un listado de vuelos disponibles en un rango de fechas y según origen y destino.
+-  POST /vuelos/nuevo: Crea un nuevo vuelo (requiere autenticación).
 
--  POST /agency/flight-booking/new: Realiza una reserva de vuelo.
+-  GET /vuelos: Obtiene un listado de todos los vuelos registrados. (No requiere autenticación)
+-  GET /vuelos/disponibles:Obtiene un listado de vuelos disponibles en un rango de fechas y según origen y destino. (No requiere autenticación).
+-  DELETE /vuelos/borrar/{id}: Elimina un vuelo (requiere autenticación).
 
--  POST /agency/flights/new: Crea un nuevo vuelo (requiere autenticación).
+-  POST /reserva-vuelo/nuevo: Realiza una nueva reserva de vuelo (requiere autenticación).
+-  GET /reserva-vuelo: EObtiene el estado de una reserva de vuelo (requiere autenticación).
+-  DELETE /reserva-vuelo/borrar/{id}: Elimina un vuelo (requiere autenticación).
 
--  PUT /agency/flights/edit/{id}: Actualiza un vuelo existente (requiere autenticación).
+## Personas
 
--  DELETE /agency/flights/delete/{id}: Elimina un vuelo (requiere autenticación).
+-  POST /personas/nuevo: Crea una nueva persona (requiere autenticación).
+-  PUT /personas/actualizar/{id}: Actualiza la información de una persona existente (requiere autenticación).
+-  GET /personas: Obtiene un listado de todas las personas registradas (No requiere autenticación).
+-  DELETE /personas/borrar/{id}: Elimina una persona (requiere autenticación).
 
-# Pruebas
 
-Puedes utilizar la colección de Postman proporcionada en la carpeta `Postman` para probar los endpoints de la API. La colección incluye ejemplos de solicitudes y respuestas para cada endpoint.
+# Pruebas en Postman
+
+Puedes hacer uso de la colección de Postman ubicada en la carpeta Postman para probar los endpoints de la API. Esta colección contiene ejemplos de solicitudes y respuestas para cada uno de los endpoints.
+
+![image](https://github.com/user-attachments/assets/5ec0e7c7-75a4-43e1-839f-cbb29c89a926)
+
 
 # Seguridad y Autenticación
 
-- Acceso libre a los endpoints de consulta de hoteles y vuelos.
+-Es importante definir las credenciales para aquellos endpoints que lo usan en application.properties:
 
-- Autenticación requerida para realizar reservas o gestionar datos.
-  
-- Seguridad básica para proteger los endpoints sensibles.
+![image](https://github.com/user-attachments/assets/b44b9cd6-82a1-4648-b67b-2107b45cae57)
 
-# Contribuciones
+Y luego en Postman ingresar sus credenciales:
 
-Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
+![image](https://github.com/user-attachments/assets/aa9ca893-ad2c-484e-9ab8-a996de4f95ef)
 
-1. Haz un fork del repositorio.
 
-2. Crea una nueva rama para tu contribución.
-
-3. Realiza tus cambios y asegúrate de que todas las pruebas pasen.
-
-4. Envía un pull request con una descripción detallada de los cambios realizados.

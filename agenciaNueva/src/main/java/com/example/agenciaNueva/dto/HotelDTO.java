@@ -15,25 +15,13 @@ import java.time.LocalDate;
 public class HotelDTO {
     @Schema(hidden = true)
     private Integer id;
-
-
     private String nombre;
-
-
     private String lugar;
-
-
     private String tipoHabitacion;
-
-
     private Double precioHabitacion;
-
-
     private LocalDate fechaDesde;
-
-
     private LocalDate fechaHasta;
-
-
     private boolean estaReservado;
+
+    //Dto
 }
